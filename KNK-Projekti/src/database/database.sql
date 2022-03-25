@@ -4,6 +4,16 @@ DROP TABLE IF EXISTS profesor;
 DROP TABLE IF EXISTS profesor_lenda;
 DROP TABLE IF EXISTS nota;
 
+CREATE TABLE IF NOT EXISTS user(
+	id int primary key AUTO_INCREMENT,
+	salted_hash varchar(256),
+	salted varchar(100)
+);
+
+ALTER TABLE user add column username varchar(100);
+ALTER TABLE user modify column username varchar(100) after id;
+
+
 CREATE TABLE IF NOT EXISTS student(
 	id int primary key AUTO_INCREMENT,
 	emri varchar(50),
