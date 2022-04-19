@@ -6,7 +6,11 @@ public class Login {
 	private String saltedHash;
 	private String salted;
 	
-	public Login(int id, String username, String saltedHash, String salted) {
+	public static Login createFromValues(int id, String username, String saltedHash, String salted) {
+		return new Login(id, username, saltedHash, salted);
+	}
+	
+	private Login(int id, String username, String saltedHash, String salted) {
 		this.id = id;
 		this.username = username;
 		this.saltedHash = saltedHash;

@@ -1,30 +1,31 @@
 package application;
 	
+import java.io.IOException;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
+	
 	@Override
-	public void start(Stage primaryStage) {
-		try {
-			Button btn = new Button("OK");
-			Pane root = new Pane();
-			root.getChildren().add(btn);
-			Scene scene = new Scene(root,400,400);
-
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+	public void start(Stage primaryStage) throws IOException {
+		
+		FXMLLoader loader = new FXMLLoader(
+				getClass().getResource("/views/LoginView.fxml")
+				);
+		
+		Parent pane = loader.load();
+		
+		Scene scene = new Scene(pane, 640, 400);
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 }

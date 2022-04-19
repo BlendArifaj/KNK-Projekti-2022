@@ -1,5 +1,7 @@
 package processor;
 
+import java.security.NoSuchAlgorithmException;
+
 import model.Login;
 import repository.LoginRepository;
 
@@ -10,7 +12,7 @@ public class LoginProcessor {
 		this.loginRepository = new LoginRepository();
 	}
 	
-	public boolean isUserValid(String username, String password) {
+	public boolean isUserValid(String username, String password) throws NoSuchAlgorithmException {
 		Login loginUser = this.loginRepository.findOne(username);
 		if(loginUser == null) {
 			return false;
