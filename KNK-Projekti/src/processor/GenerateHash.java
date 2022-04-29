@@ -24,4 +24,8 @@ public class GenerateHash {
 	    }
 	    return hexString.toString();
 	}
+	
+	public static String generateSalted() {
+		return "generate salted ....";
+	}
 }
