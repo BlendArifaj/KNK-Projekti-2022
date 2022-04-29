@@ -22,7 +22,10 @@ public class LoginRepository {
 			FilterQueryBuilder query = (FilterQueryBuilder)
 					FilterQueryBuilder.create(this.TABLE_NAME)
 					.addWhere("username", username, "s");
+
+
 			ResultSet res = this.connection.executeQuery(query.getQuery(), query.getTypes(), query.getValues());
+		
 			if(res.next()) {
 				return Login.createFromValues(
 						res.getInt("id"),
@@ -33,6 +36,7 @@ public class LoginRepository {
 			}
 			return null;
 		}catch(Exception e) {
+			System.err.println(e.getMessage());
 			return null;
 		}
 	}

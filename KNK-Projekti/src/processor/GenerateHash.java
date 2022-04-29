@@ -26,6 +26,6 @@ public class GenerateHash {
 	}
 	
 	public static String generateSalted() {
-		return "generate salted ....";
+		return "salted-hash";
 	}
 }

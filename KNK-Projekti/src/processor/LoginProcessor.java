@@ -14,6 +14,7 @@ public class LoginProcessor {
 	
 	public boolean isUserValid(String username, String password) throws NoSuchAlgorithmException {
 		Login loginUser = this.loginRepository.findOne(username);
+		
 		if(loginUser == null) {
 			return false;
 		}
