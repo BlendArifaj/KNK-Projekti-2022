@@ -3,6 +3,8 @@ package processor;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Random;
 
 public class GenerateHash {
 	public static String generate(String password, String salted) throws NoSuchAlgorithmException {
@@ -25,7 +27,23 @@ public class GenerateHash {
 	    return hexString.toString();
 	}
 	
+	
 	public static String generateSalted() {
-		return "salted-hash";
-	}
+		Random random = new SecureRandom();
+		int length = 64;
+		
+	    StringBuilder sb = new StringBuilder(length);
+	    for (int i = 0; i < length; i++) {
+	      int c = random.nextInt(62);
+	      if (c <= 9) {
+	        sb.append(String.valueOf(c));
+	      } else if (c < 36) {
+	        sb.append((char) ('a' + c - 10));
+	      } else {
+	        sb.append((char) ('A' + c - 36));
+	      }
+	    }
+	    
+	    return sb.toString();
+	  }
 }
