@@ -23,6 +23,10 @@ public class DBConnect {
 		this.conn = this.connection();
 	}
 	
+	public Connection getConnection() {
+		return this.conn;
+	}
+	
 	private static Connection connection() {
 		try {
 			Class.forName(DBConnect.DRIVER_NAME);  
