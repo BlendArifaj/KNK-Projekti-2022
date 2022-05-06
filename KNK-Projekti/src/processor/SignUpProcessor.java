@@ -8,6 +8,9 @@ import repository.LoginRepository;
 public class SignUpProcessor {
 	private LoginRepository loginRepository;
 	
+	public SignUpProcessor() {
+		this.loginRepository = new LoginRepository();
+	}
 	
 	public boolean createNewUser(CreateUserDTO userDto) throws NoSuchAlgorithmException {
 		String salted = GenerateHash.generateSalted();

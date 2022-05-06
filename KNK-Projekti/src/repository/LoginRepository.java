@@ -45,11 +45,11 @@ public class LoginRepository {
 		try {
 			InsertQueryBuilder query = (InsertQueryBuilder)
 					InsertQueryBuilder.create("user")
-					.add("emri", userDto.getEmri(), "s")
-					.add("mbiemri", userDto.getMbiemri(), "s")
+					.add("id", 0, "i")
+					.add("username", userDto.getEmri(), "s")
 					.add("salted_hash", userDto.getSaltedHash(), "s")
-					.add("salted", userDto.getSalted(), "s")
-					.add("email", userDto.getEmail(), "s");
+					.add("salted", userDto.getSalted(), "s");
+			
 			int lastInsertedId = 
 					this.connection.execute(
 							query.getQuery(), query.getTypes(), query.getValues()

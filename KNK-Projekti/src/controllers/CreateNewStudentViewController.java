@@ -24,7 +24,6 @@ public class CreateNewStudentViewController {
 		this.repository = new StudentRepository();
 	}
 	
-	
 	@FXML
 	private TextField txtEmri;
 	
@@ -80,7 +79,7 @@ public class CreateNewStudentViewController {
 		if(inserted) {
 			loadHomePage(source);
 		}else {
-			// Alert 
+			// Alert: insert failed!
 		}
 		
 	}

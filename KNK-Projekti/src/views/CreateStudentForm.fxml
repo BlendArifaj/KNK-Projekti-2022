@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleEnterAction" prefHeight="621.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers/CreateNewStudentViewController">
    <children>
       <VBox layoutX="147.0" layoutY="30.0" prefHeight="319.0" prefWidth="328.0">
@@ -41,7 +40,7 @@
                   <Label prefHeight="17.0" prefWidth="70.0" text="Mbiemri: " GridPane.rowIndex="1" />
                   <Label text="Viti i regjistrimit" GridPane.rowIndex="2" />
                   <Label text="Qyteti" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" />
+                  <TextField fx:id="txtEmri" GridPane.columnIndex="1" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
