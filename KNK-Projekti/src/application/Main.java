@@ -37,6 +37,9 @@ public class Main extends Application {
 		primaryStage.titleProperty().bind(I18N.createStringBinding("window.title"));
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		//Ndryshime i gjuhes gjate ekzekutimit te programi behet permes funksionet setLocale ne klasen I18N
+		I18N.setLocale(Locale.GERMAN);
 	}
 	
 	public static void main(String[] args) {
