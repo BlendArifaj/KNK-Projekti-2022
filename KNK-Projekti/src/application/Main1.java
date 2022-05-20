@@ -12,6 +12,7 @@ public class Main1 {
 	public static void main(String[] args) {
 		CustomBarChartProcessor processor = new CustomBarChartProcessor();
 		ArrayList<XYChart.Series> series = processor.getSeries();
+		
 		Axis x = new CategoryAxis();
 		x.setLabel("Fakulteti");
 		
