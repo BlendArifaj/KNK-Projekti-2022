@@ -40,14 +40,10 @@ public class UpdateQueryBuilder extends AbstractQueryBuilder {
 		    if(!isLastElement) {
 		    	updateQuery += "AND ";
 		    }
-		}
-
-			
+		}	
 		return updateQuery;
 	}
 	
-	
-
 	public String getTypes() {
 		return this.queryTypes;
 	}

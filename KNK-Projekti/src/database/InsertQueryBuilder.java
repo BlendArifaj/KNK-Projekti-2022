@@ -30,7 +30,7 @@ public class InsertQueryBuilder extends AbstractQueryBuilder {
 		    	values += ", ";
 		    }
 		}
-		
+	
 		return "INSERT INTO " + super.tableName + " ("+ fields +") VALUES ("+ values +")"; 
 	}
 	
@@ -45,6 +45,5 @@ public class InsertQueryBuilder extends AbstractQueryBuilder {
 		}
 		return values;
 	}
-	
 }
 

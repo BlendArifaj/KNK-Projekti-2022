@@ -21,7 +21,8 @@ public class LoginRepository {
 		try {
 			FilterQueryBuilder query = (FilterQueryBuilder)
 					FilterQueryBuilder.create(this.TABLE_NAME)
-					.addWhere("username", username, "s");
+					.addWhere("username", username, "s")
+					.addLike("username", username, "s");
 
 
 			ResultSet res = this.connection.executeQuery(query.getQuery(), query.getTypes(), query.getValues());

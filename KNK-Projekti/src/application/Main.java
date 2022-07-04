@@ -19,6 +19,7 @@ import processor.SignUpProcessor;
 import utilities.I18N;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 
 
 public class Main extends Application {
@@ -29,12 +30,14 @@ public class Main extends Application {
 		FXMLLoader loader = new FXMLLoader(
 				getClass().getResource("/views/LoginView.fxml")
 				);
-		
+	
 		Parent pane = loader.load();
 		
 		Scene scene = new Scene(pane, 640, 400);
 
+		//primaryStage.titleProperty().bind(I18N.createStringBinding("window.title"));
 		primaryStage.titleProperty().bind(I18N.createStringBinding("window.title"));
+		primaryStage.setTitle("FIEK");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		

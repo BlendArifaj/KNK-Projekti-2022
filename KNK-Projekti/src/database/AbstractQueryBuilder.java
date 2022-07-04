@@ -41,9 +41,18 @@ public abstract class AbstractQueryBuilder {
 		field = field.trim();
 		if(this.fieldExists(field, this.whereValues)) {
 			throw new Exception("Field already exists!");
-		}
-		
-		
+		}		
+		this.whereTypes += type;
+		this.whereValues.add(new Object[] {field, value});
+
+		return this;
+	}
+	
+	public AbstractQueryBuilder addLike(String field, Object value, String type) throws Exception {
+		field = field.trim();
+		if(this.fieldExists(field, this.whereValues)) {
+			throw new Exception("Field already exists!");
+		}		
 		this.whereTypes += type;
 		this.whereValues.add(new Object[] {field, value});
 

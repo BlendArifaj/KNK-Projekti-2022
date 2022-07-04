@@ -2,22 +2,27 @@ package controllers;
 
 
 import java.io.IOException;
+import java.net.URL;
 import java.security.NoSuchAlgorithmException;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import model.Student;
 import repository.StudentRepository;
+import utilities.I18N;
 
-public class CreateNewStudentViewController {
+public class CreateNewStudentViewController implements Initializable{
 	private StudentRepository repository;
 	
 	public CreateNewStudentViewController() {
@@ -36,6 +41,15 @@ public class CreateNewStudentViewController {
 	@FXML
 	private TextField txtQyteti;
 	
+	@FXML
+	private Button btnClick;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		//I18N
+		this.btnClick.textProperty().bind(I18N.createStringBinding("button.click_button"));
+		
+	}
 	
 	@FXML
 	private void handleEnterAction(KeyEvent ke) throws IOException, NoSuchAlgorithmException {
@@ -83,6 +97,8 @@ public class CreateNewStudentViewController {
 		}
 		
 	}
+
+
 }
 
 

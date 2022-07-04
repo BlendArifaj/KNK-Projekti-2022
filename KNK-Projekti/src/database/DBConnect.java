@@ -67,12 +67,12 @@ public class DBConnect {
 		}
 
 		int lastInsertedId = 0;
+		preparedStatement.execute();
 
 		ResultSet res = preparedStatement.getGeneratedKeys();
 		if(res.next()) {
 			lastInsertedId = res.getInt(1);
 		}
-		preparedStatement.execute();
 		preparedStatement.close();
 		this.close();
 		
